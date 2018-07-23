@@ -1,0 +1,35 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<div class="containerUserForm">
+	<div class="rowUserForm rowUserTitle">
+		EDITER MON PROFIL
+	</div>
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.username) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.username, {'attr':{'class':'inputUser'}}) }}
+    	</div>
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.email) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.email, {'attr': {'class':'inputUser'}}) }}
+    	</div>
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.current_password) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.current_password, {'attr': {'class': 'inputUser password'}}) }}
+    		<div class="mdpViewBtn">
+    			<i class="material-icons viewIcon">visibility</i>
+    		</div>
+    	</div>
+    	<div class="rowUserForm rowUserSubmit">
+        	<input type="submit" class="inputSubmitUser" value="{{ 'profile.edit.submit'|trans }}" />
+    	</div>
+    {{ form_end(form) }}
+</div>
+

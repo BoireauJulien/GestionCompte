@@ -1,0 +1,43 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block title %}
+	profile - {{ parent() }}
+{% endblock %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/profile.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/profile.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	La gestion du profile.
+{% endblock infoPage %}
+
+{% block body %}
+<div class="profileTitle">
+	La gestion de mon profil
+</div>
+
+<div class="containerCarteUser">
+	<a href="{{ path('fos_user_profile_show') }}" class="aProfile">
+		<div class="userCarte" title="Voir le détail de mon profil">
+			<i class="material-icons userProfileIcon">visibility</i>
+		</div>
+	</a>
+	<a href="{{ path('fos_user_profile_edit') }}" class="aProfile">
+		<div class="userCarte" title="Editer mon profil">
+			<i class="material-icons userProfileIcon">create</i>
+		</div>
+	</a>
+	<a href="{{ path('fos_user_change_password') }}" class="aProfile">
+		<div class="userCarte" title="Changer mon mot de passe">
+			<i class="material-icons userProfileIcon">vpn_key</i>
+		</div>
+	</a>
+</div>
+
+{% endblock %}

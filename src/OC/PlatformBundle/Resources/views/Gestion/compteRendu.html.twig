@@ -1,0 +1,58 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/compteRendu.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/gestionCompte.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Le compte-rendu
+{% endblock %}
+
+{% block body %}
+	<a href="{{ path('oc_compterendu_debit_date') }}" class="aCR">
+		<div class="debitDate carteCR carteRowTop">
+			<div class="carteCRTitle">Dépenses par date</div>
+			<div class="carteCRContent">
+				Total des dépenses (crédit-débit) en fonction de la date choisie.
+			</div>
+		</div>
+	</a>
+	<a href="{{ path('oc_compterendu_debit_mois') }}" class="aCR">
+		<div class="debitMois carteCR carteRowTop">
+			<div class="carteCRTitle">Dépenses par mois</div>
+			<div class="carteCRContent">
+				Récpitulatif des crédits, débits ainsi que la différence credit - débit par mois.
+			</div>
+		</div>
+	</a>
+	<a href="{{ path('oc_compterendu_depense_annee') }}" class="aCR">
+		<div class="creditMois carteCR carteRowTop">
+			<div class="carteCRTitle">Dépenses par année</div>
+			<div class="carteCRContent">
+				Récapitulatif des crédits, débits ainsi que de la différence crédit - débit pas année.
+			</div>
+		</div>
+	</a>
+	<a href="{{ path('oc_compterendu_debit_category') }}" class="aCR">
+		<div class="debitCategory carteCR carteRowDown">
+			<div class="carteCRTitle">Dépenses par catégorie/mois</div>
+			<div class="carteCRContent">
+				Total des dépenses par catégorie et par mois.
+			</div>
+		</div>
+	</a>
+	<a href="{{ path('oc_compterendu_cat_annee') }}" class="aCR">
+		<div class="debitCreditMois carteCR carteRowDown">
+			<div class="carteCRTitle">Dépenses par catégorie/année</div>
+			<div class="carteCRContent">
+				Total des dépenses par catégorie et par année.
+			</div>
+		</div>
+	</a>
+	
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/compteRendu/cRMonth.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/compteRendu/cRMonth.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Compte-rendu : Crédit et débit par mois.
+{% endblock %}
+
+{% block body %}
+	<div class="containerMonths">
+		<div class="filterMonth">
+			Janvier
+		</div>
+		<div class="filterMonth">
+			Février
+		</div>
+		<div class="filterMonth">
+			Mars
+		</div>
+		<div class="filterMonth">
+			Avril
+		</div>
+		<div class="filterMonth">
+			Mai
+		</div>
+		<div class="filterMonth">
+			Juin
+		</div>
+		<div class="filterMonth">
+			Juillet
+		</div>
+		<div class="filterMonth">
+			Août
+		</div>
+		<div class="filterMonth">
+			Septembre
+		</div>
+		<div class="filterMonth">
+			Octobre
+		</div>
+		<div class="filterMonth">
+			Novembre
+		</div>
+		<div class="filterMonth">
+			Décembre
+		</div>
+	</div>
+	<div class="containerSelection">
+		Veuillez sélectionner un mois pour avoir le compte-rendu de celui-ci.
+	</div>
+	<div class="containerCartes">
+		<div class="carteMM carteEmpty">
+			<div class="contentEmpty">
+				Aucune carte de compte-rendu n'est disponnible pour ce mois-ci.
+			</div>
+		</div>
+		{% for arrayTypeMM in arraysTypeMM %}
+			{% for typeMM in arrayTypeMM %}
+				<div class="carteMM carteFill">
+					<div class="rowAccount">
+						{{ typeMM.account }}
+					</div>
+					<div class="rowMonth">
+						<div class="monthIndex">{{ typeMM.month }}</div>
+						<div class="monthLibelle">
+							{% set arrayMonth = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin','Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'décembre'] %}
+							{{ arrayMonth[typeMM.month - 1] }}
+						</div>
+					</div>
+					<div class="rowMC">
+						Crédit (€) <br/>
+						{{ typeMM.montantCredit }}
+					</div>
+					<div class="rowMD">
+						Débit (€) <br/>
+						{{ typeMM.montantDebit }}
+					</div>
+					<div class="rowMCD">
+						<div class="MCDTitle">Crédit - Débit (€) </div>
+						<div class="MCDContent">
+							<div class="contentMCDCenter">
+								{{ typeMM.montantCD }}
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
+{% endblock %}

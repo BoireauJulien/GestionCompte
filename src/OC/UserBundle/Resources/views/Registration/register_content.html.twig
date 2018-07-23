@@ -1,0 +1,45 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="containerUserForm">
+	<div class="rowUserForm rowUserTitle">
+		INSCRIPTION
+	</div>
+	{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    	
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.email) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.email, {'attr':{'class': 'inputUser'}}) }}
+    	</div>
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.username) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.username, {'attr': {'class': 'inputUser'}}) }}
+    	</div>
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.plainPassword.first) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.plainPassword.first, {'attr': {'class': 'inputUser password'}}) }}
+    		<div class="mdpViewBtn">
+    			<i class="material-icons viewIcon">visibility</i>
+    		</div>
+    	</div>
+    	<div class="rowUserForm rowUserLabel">
+    		{{ form_label(form.plainPassword.second) }}
+    	</div>
+    	<div class="rowUserForm rowUserInput">
+    		{{ form_widget(form.plainPassword.second, {'attr': {'class': 'inputUser password'}}) }}
+    		<div class="mdpViewBtn">
+    			<i class="material-icons viewIcon">visibility</i>
+    		</div>
+    	</div>
+        
+    	<div class="rowUserForm rowUserSubmit">
+        	<input type="submit" class="inputSubmitUser" value="{{ 'registration.submit'|trans }}" />
+    	</div>
+    {{ form_end(form) }}
+</div>
+

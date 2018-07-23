@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{% block meta %}
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		{% endblock meta %}
+		<title>
+			{% block title %} GC {% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{ asset('Style/LayoutStyle.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Baloo|Francois+One|Kanit|Kotta+One|Marcellus|Maven+Pro|Merienda" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette|Merienda|Roboto+Condensed" rel="stylesheet">
+		<script type="text/javascript" src="{{ asset('Script/jQuery.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('Script/layout.js') }}"></script>
+		{% block scriptAndStyle %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="overlayBackground"></div>
+		<div class="header">
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<div class="infoUser userCo">
+					<i class="material-icons iconUser">person</i>
+				</div>
+			{% else %}
+				<div class="infoUser userDeco">
+					<i class="material-icons iconUser">person</i>
+				</div>
+			{% endif %}
+			
+			Gestion
+			<div class="infoPage">
+				
+			    {% block infoPage %}
+			    {% endblock infoPage %}
+			</div>
+		</div>
+		
+		<div class="containerProfil">
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<div class="nameUser">
+					{{ app.user.username }}
+				</div>
+				<a href="{{ path('fos_user_security_logout') }}" class="btnLog decoBtn" title="Déconnexion">
+					<i class="material-icons iconLog">power_settings_new</i>
+				</a>
+				<a href="{{ path('oc_user_profile') }}" class="btnLog settingsBtn" title="Paramètres">
+					<i class="material-icons iconLog">settings</i>
+				</a>
+				<a href="{{ path('oc_platform_home') }}" class="btnLog homeBtn" title="Acceuil">
+					<i class="material-icons iconLog">home</i>
+				</a>
+			{% else %}
+				<div class="nameUser">
+					Anonyme
+				</div>
+				<a href="{{ path('fos_user_security_login') }}" class="btnLog coBtn" title="Connexion">
+					<i class="material-icons iconLog">exit_to_app</i>
+				</a>
+				<a href="{{ path('fos_user_registration_register') }}" class="btnLog registerBtn" title="Inscription">
+					<i class="material-icons iconLog">person_add</i>
+				</a>
+			{% endif %}
+		</div>
+			
+		<div class="menuLeft">
+			<a class="menuBtnLeft" href="{{ path('oc_platform_home') }}")>Accueil</a>
+			<a class="menuBtnLeft" href="{{ path('oc_platform_ajout_operation') }}">Ajout opération</a>
+			<a class="menuBtnLeft" href="{{ path('oc_platform_selection') }}">Statistiques</a>
+			<a class="menuBtnLeft" href="{{ path('oc_platform_compte_rendu') }}">Compte-rendu</a>
+			<a class="menuBtnLeft" href="{{ path('oc_platform_gestion') }}">Gestion</a>
+		</div>
+		<div class="containerBody">
+			{% block body %}
+		    {% endblock %}
+		</div>
+	</body>
+</html>

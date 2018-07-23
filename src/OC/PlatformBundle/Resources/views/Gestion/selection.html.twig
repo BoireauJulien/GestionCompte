@@ -1,0 +1,86 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/statistiques.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/statistiques.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+	selection - {{ parent() }}
+{% endblock %}
+
+{% block infoPage %}
+	Les statistiques
+{% endblock %}
+
+{% block body %}
+	<div class="statTitle">
+		Les moyennes sur le débit
+	</div>
+	<div class="containerCartesStat">
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Catégorie<br/>&<br/>mois
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Par categorie & année
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Total par mois
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Total par année
+			</div>
+		</a>
+	</div>
+	<div class="statTitle">
+		Les valeurs maximales de débit
+	</div>
+	<div class="containerCartesStat">
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Mois
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Année
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Global
+			</div>
+		</a>
+	</div>
+	<div class="statTitle">
+		Les valeurs maximales de crédit
+	</div>
+	<div class="containerCartesStat">
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Mois
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Année
+			</div>
+		</a>
+		<a href="" class="aStat">
+			<div class="carteStat">
+				Global
+			</div>
+		</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,234 @@
+@charset "ISO-8859-1";
+
+.gestionCard
+{
+	background: linear-gradient(to bottom right, rgba(0,116,189,0.2), rgb(0,207,219), rgb(0,116,189));
+	background-color: rgb(100,100,100);
+	transition: background-color 1s, width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+	font-family: 'Marcellus', serif;
+	border-radius: 10px;
+}
+.gestionCard:hover
+{
+	background-color: rgb(232,0,179);
+	font-size: 50px;
+	text-shadow: -2px -1px 0px rgba(0,0,0,0.7);
+	width: 30%;
+	height: 35%;
+	line-height: 80px;
+	cursor: pointer;
+	opacity: 1;
+}
+.addACard
+{
+	top: 10%;
+	left: 20%;
+}
+.addACard:hover
+{
+	top: 7.5%;
+	left: 17.5%;
+}
+.supCard
+{
+	top: 10%;
+	left: 55%;
+}
+.supCard:hover
+{
+	top: 7.5%;
+	left: 52.5%;
+}
+.addCCard
+{
+	top: 50%;
+	left: 20%;
+}
+.addCCard:hover
+{
+	top: 47.5%;
+	left: 17.5%;
+}
+.retraitCard
+{
+	top: 50%;
+	left: 55%;
+}
+.retraitCard:hover
+{
+	top: 47.5%;
+	left: 52.5%;
+}
+.btnGestion
+{
+	background: linear-gradient(to bottom right, rgba(0,116,189,0.2), rgb(0,207,219), rgb(0,116,189));
+	background-color: rgb(100,100,100);
+	display: none;
+	font-family: 'Marcellus', serif;
+	transition: background-color 1s, box-shadow 0.5s;
+}
+.btnGestion:hover
+{
+	box-shadow: inset 2px 2px 1px rgba(255,255,255,0.6),
+				inset -2px -2px 1px rgba(0,0,0,0.6);
+	text-shadow: -1px -0.5px 0px rgba(0,0,0,0.7);
+	font-size: 22px;
+	cursor: pointer;
+}
+.btnAddA
+{
+	left: 8%;
+}
+.btnSupA
+{
+	left: 31%;
+}
+.btnAddC
+{
+	left: 54%;
+}
+.btnSupC
+{
+	left: 77%;
+}
+.gestionForm
+{
+	position: absolute;
+	top: 101%;
+	width: 100%;
+	height: 100%;
+}
+.formGestionTitle
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 15%;
+	color: rgb(0,124,176);
+	font-weight: bold;
+	font-size: 28px;
+	text-align: center;
+	font-family: 'Kanit', sans-serif;
+}
+.labelAdd
+{
+	position: absolute;
+	top: 15%;
+	left: 0%;
+	font-family: 'Maven Pro', sans-serif;
+}
+.labelSolde
+{
+	position:absolute;
+	top: 40%;
+	left: 0%;
+	font-family: 'Maven Pro', sans-serif;
+}
+.labelSup
+{
+	position: absolute;
+	top:15%;
+	left: 0%;
+	font-family: 'Maven Pro', sans-serif;
+}
+.labelGestion
+{
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	font-family: 'Maven Pro', sans-serif;
+}
+.inputGestion
+{
+	height: 10%;
+	width: 80%;
+	text-align: center;
+	font-size: 26px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5);
+	font-family: 'Maven Pro', sans-serif;
+	background-color: transparent;
+	transition: box-shadow 1s;
+}
+.inputGestion:focus
+{
+	outline: none;
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5),
+				0 2px 0 0 rgb(242,117,0);
+}
+.inputAddC
+{
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	font-family: 'Maven Pro', sans-serif;
+	background-color: transparent;
+}
+.inputSolde
+{
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	font-family: 'Maven Pro', sans-serif;
+	background-color: transparent;
+}
+.selectEntity
+{
+	position: absolute;
+	width: 80%;
+	height: 25%;
+	left: 10%;
+	top: 25%;
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5);
+	border: none;
+	text-align: center;
+	font-family: 'Maven Pro', sans-serif;
+	background-color: transparent;
+	transition: box-shadow 1s;
+}
+.selectEntity:focus
+{
+	outline: none;
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5),
+				0 2px 0 0 rgb(242,117,0);
+}
+.inputBtnGestion
+{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	top: 70%;
+	left: 43%;
+	border: none;
+	border-radius: 50%;
+	background-color: rgba(2,101,0);
+	color: white;
+	font-size: 22px;
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 2px rgba(0,0,0,0.6);
+}
+.inputBtnGestion:hover
+{
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 8px rgba(0,0,0,0.7);
+	background-color: rgb(3,152,0);
+	cursor: pointer;
+	font-size: 30px;
+	text-shadow: -2px -1px 0px rgba(0,0,0,0.7);
+}
+.inputBtnGestion:focus
+{
+	outline: none;
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 8px rgba(0,0,0,0.7),
+				0 0 0 3px rgb(0,153,204);
+}

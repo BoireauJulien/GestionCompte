@@ -1,0 +1,65 @@
+
+#-------------------------------- Compte controller -------------------------------
+oc_platform_home:
+    path: /
+    defaults: 
+        _controller: OCPlatformBundle:Compte:index 
+
+oc_platform_ajout_operation:
+    path: /ajout-operation
+    defaults: 
+        _controller: OCPlatformBundle:Compte:ajoutOperation
+
+oc_platform_selection:
+    path: /selection
+    defaults:
+        _controller: OCPlatformBundle:Compte:selection
+        
+oc_platform_compte_rendu:
+    path: /compte-rendu
+    defaults:
+        _controller: OCPlatformBundle:Compte:compteRendu
+
+oc_platform_gestion:
+    path: /gestion-compte
+    defaults:
+        _controller: OCPlatformBundle:Compte:gestionCompte
+
+#---------------------------- LCRemove controller -----------------------------------
+oc_lignecompte_suppression:
+    path: /lignecompte/suppression/{id}
+    defaults:
+        _controller: OCPlatformBundle:LCRemove:removeLc
+        
+#---------------------------- CompteRendu controller -------------------------------
+oc_compterendu_debit_date:
+    path: /compte-rendu/debit-par-date
+    defaults:
+        _controller: OCPlatformBundle:CompteRendu:debitDate
+
+oc_compterendu_debit_mois:
+    path: /compte-rendu/debit-par-mois
+    defaults:
+        _controller: OCPlatformBundle:CompteRendu:cdMois
+
+oc_compterendu_depense_annee:
+    path: /compte-rendu/depense-par-annee
+    defaults:
+        _controller: OCPlatformBundle:CompteRendu:depenseAnnee
+
+oc_compterendu_debit_category:
+    path: /compte-rendu/depense-categorie-mois
+    defaults:
+        _controller: OCPlatformBundle:CompteRendu:debitCategory
+       
+oc_compterendu_cat_annee:
+    path: /compte-rendu/depense-categorie-annee
+    defaults:
+        _controller: OCPlatformBundle:CompteRendu:catAnnee
+        
+# ------------------------------- USER PROFILE ---------------------------
+
+oc_user_profile:
+    path: /profil-utilisateur
+    defaults:
+        _controller: OCPlatformBundle:Compte:profile

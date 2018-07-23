@@ -1,0 +1,46 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<title>jQuery UI Datepicker - Animations</title>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="{{ asset('Style/compteRendu/debitDate.css') }}">
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script type="text/javascript" src="{{ asset('Script/compteRendu/debitDate.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Compte-rendu : Total crédit moins débit par date.
+{% endblock %}
+
+{% block body %}
+	<div class="labelInputDD">Choisissez une date</div>
+	<input type="text" id="datepicker" class="datePickerDD"size="30">
+	<div class="containerCarteMD">
+		<div class="carteDC noDC">
+			<div class="contentNoDC">
+				Aucune opération n'a été effectuée à cette date.
+			</div>
+		</div>
+	    {% for arrayTypeMD in arraysTypeMD %}
+		    {% for typeMD in arrayTypeMD %}
+				<div class="carteMD carteDC">
+					<div class="accountNameMD rowCarteMD">
+						{{ typeMD.libelleCompte }}
+					</div>
+					<div class="dateMD rowCarteMD">
+			            {{ typeMD.date|date('d/m/Y') }}
+			        </div>
+					<div class="montantMD rowCarteMD">
+						<div class="montantCenter">
+							{{ typeMD.montant }}
+						</div>
+			        </div> 
+			    </div>
+		    {% endfor %}
+	    {% endfor %}
+	</div>
+{% endblock %}

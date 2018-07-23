@@ -1,0 +1,74 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/compteRendu/depenseAnnee.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/compteRendu/depenseAnnee.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Compte-rendu : Crédit et débit par année.
+{% endblock %}
+
+{% block body %}
+	<div class="selectYearContainer">
+		<div class="switchBtn lessBtn">
+			-
+		</div>
+		<div class="selectYear">
+			{{ currentYear }}
+		</div>
+		<div class="switchBtn moreBtn">
+			+
+		</div>
+	</div>
+	<div class="containerCartes">
+		<div class="carteMY carteEmpty">
+			<div class="contentEmpty">
+				Aucune carte de compte-rendu n'est disponnible pour cette année.
+			</div>
+		</div>
+		{% for arrayTypeMY in arraysTypeMY %}
+			{% for typeMY in arrayTypeMY %}
+				<div class="carteMY carteFill">
+					<div class="rowAccount rowMY">
+						{{ typeMY.account }}
+					</div>
+					<div class="rowYear rowMY">
+						{{ typeMY.year }}
+					</div>
+					<div class="rowMCD rowMY">
+						<div class="colGraph">
+							<div class="graph">
+								<div class="graphCredit">
+								
+								</div>
+							</div>
+							Crédit (€)<br/>
+							<div class="montantC">
+							    {{ typeMY.montantCredit }}
+							</div>
+						</div>
+						<div class="colGraph">
+							<div class="graph">
+								<div class="graphDebit">
+								
+								</div>
+							</div>
+							Débit (€)<br/>
+							<div class="montantD">
+							    {{ typeMY.montantDebit }}
+							</div>
+						</div>
+					</div>
+					<div class="totalRow">
+						{{ typeMY.totalMontant }} €
+					</div>
+				</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
+{% endblock %}

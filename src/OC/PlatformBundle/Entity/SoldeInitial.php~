@@ -1,0 +1,71 @@
+<?php
+
+namespace OC\PlatformBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SoldeInitial
+ *
+ * @ORM\Table(name="solde_initial")
+ * @ORM\Entity(repositoryClass="OC\PlatformBundle\Repository\SoldeInitialRepository")
+ */
+class SoldeInitial
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montant", type="decimal", precision=10, scale=2)
+     */
+    private $montant;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="OC\PlatformBundle\Entity\Compte", inversedBy="soldeInitial")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $compte;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set montant.
+     *
+     * @param string $montant
+     *
+     * @return SoldeInitial
+     */
+    public function setMontant($montant)
+    {
+        $this->montant = $montant;
+
+        return $this;
+    }
+
+    /**
+     * Get montant.
+     *
+     * @return string
+     */
+    public function getMontant()
+    {
+        return $this->montant;
+    }
+}

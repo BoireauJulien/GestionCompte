@@ -1,0 +1,106 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block title %}
+	Home - {{ parent() }}
+{% endblock %}
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/AccueilStyle.css') }}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="{{ asset('Script/jquery.mousewheel.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('Script/Accueil.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Accueil, bienvenue
+{% endblock %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+	<div class="containerCompteBtns">
+		<div class="compteTitle">Compte(s)</div>
+		{% for compte in arrayCompte %}
+			<button class="choiceCompteBtn">{{ compte.accountName }}</button>
+		{% endfor %}
+	</div>
+	
+	<div class="containerRowTitles">
+		<div class="colAccueil colDate">
+			Date
+		</div>
+		<div class="colAccueil colCategory">
+			Catégorie
+		</div>
+		<div class="colAccueil colDetail">
+			Détail
+		</div>
+		<div class="colAccueil colMontant">
+			Montant
+		</div>
+		<div class="colAccueil colTitleDelete">
+			X
+		</div>
+	</div>
+	
+	<div class="containerSoldes">
+		<div class="soldeTitle">Solde (€)</div>
+		{% for solde in arraySolde %}
+			<div class="containerSolde">
+				<div class="soldeCenter">
+					{{ solde|number_format(2, '.', ',') }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="containerLittleView">
+		
+			{% for lignesCompte in arrayLignesCompte %}
+				<div class="containerHugeView">
+		        {% for ligneCompte in lignesCompte %}
+		        	{% if ligneCompte.montant < 0 %}
+		        	<div class="rowScreenAccueil rowColor1">
+		        	{% else %}
+					<div class="rowScreenAccueil rowColor2">
+					{% endif %}
+						<div class="colAccueil colDate">
+					        {{ ligneCompte.dateOp|date('d/m/Y') }}
+						</div>
+						<div class="colAccueil colCategory">
+					        {{ ligneCompte.category.catName }}
+						</div>
+						<div class="colAccueil colDetail">
+					        {{ ligneCompte.detail }}
+						</div>
+						<div class="colAccueil colMontant">
+					        {{ ligneCompte.montant|number_format(2, '.', ',') }} €
+						</div>
+						<div class="colAction colorDelete">
+							<a href="/lignecompte/suppression/{{ ligneCompte.id }}" class="aSuppression" title="Supprimer cette ligne">
+								<i class="material-icons iconeAction">delete_forever</i>
+							</a>
+						</div>
+					</div>
+		        {% endfor %}
+		        </div>
+	        {% endfor %}
+		
+	</div>
+{% else %}
+
+	<div class="titleNotConnect">
+		Vous n'êtes pas connecté.
+	</div>
+	<div class="messageNotConnect">
+		Sans être connecté vous n'aurez accès à aucune autre page de ce site.
+	</div>
+	<div class="messageNotConnect">
+		Vous pouvez vous connectez ou vous inscrire en cliquant sur l'icône en haut à droite de l'écran.
+	</div>
+
+{% endif %}
+	
+{% endblock %}

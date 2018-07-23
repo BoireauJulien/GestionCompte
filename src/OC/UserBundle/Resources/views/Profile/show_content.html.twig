@@ -1,0 +1,32 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="containerUserForm">
+	<div class="rowUserForm rowUserTitle">
+		MON PROFIL
+	</div>
+	<div class="rowUserForm rowUserLabel"></div>
+	<div class="rowUserForm rowUserLabel rowLabelProfil">
+		{{ 'profile.show.username'|trans }}
+	</div>
+	<div class="rowUserForm rowUserInput rowData">
+		{{ user.username }}
+	</div>
+	<div class="rowUserForm rowUserLabel rowLabelProfil">
+		{{ 'profile.show.email'|trans }}
+	</div>
+	<div class="rowUserForm rowUserInput rowData">
+		{{ user.email }}
+	</div>
+	<div class="rowUserForm rowUserLabel rowLabelProfil">
+		Comptes
+	</div>
+	<div class="rowDataAccount">
+		{% for compte in user.comptes %}
+			<div class="rowUserForm rowUserInput rowData">
+			    {{ compte.accountName }}
+			</div>
+			<br/>
+	    {% endfor %}
+	</div>
+	
+</div>

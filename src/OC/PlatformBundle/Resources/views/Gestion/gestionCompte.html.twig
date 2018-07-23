@@ -1,0 +1,132 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block title %}
+	gestion - {{ parent() }}
+{% endblock %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/gestionCompte.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/gestionCompte.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	La gestion des comptes
+{% endblock infoPage %}
+
+{% block body %}
+	<div class="littleCard gestionCard addACard">
+		Ajout <br/>
+		compte
+	</div>
+	<div class="littleCard gestionCard supCard">
+		Suppression <br/>
+		compte
+	</div>
+	<div class="littleCard gestionCard addCCard">
+		Ajout <br/>
+		catégorie
+	</div>
+	<div class="littleCard gestionCard retraitCard">
+		Suppression <br/>
+		catégorie 
+	</div>
+	<div class="btnLittleCard btnGestion btnAddA">
+		Ajout compte
+	</div>
+	<div class="btnLittleCard btnGestion btnSupA">
+		Sup compte
+	</div>
+	<div class="btnLittleCard btnGestion btnAddC">
+		Ajout catégorie
+	</div>
+	<div class="btnLittleCard btnGestion btnSupC">
+		Sup catégorie
+	</div>
+	<div class="containerForm">
+		<img class="imgBack" src="{{ asset('images/carteBack.jpg') }}">
+		<div class="gestionForm formAddA">
+			<div class="formGestionTitle">
+				Ajout d'un compte bancaire
+			</div>
+			
+			{{ form_start(formAddAccount) }}
+			
+			{{ form_errors(formAddAccount) }}
+			
+			{{ form_label(formAddAccount.accountName, "Nom du compte bancaire", {'label_attr': {'class': 'labelAdd labelGestion'}}) }}
+			
+			{{ form_errors(formAddAccount.accountName) }}
+			
+			{{ form_widget(formAddAccount.accountName, {'attr': {'class': 'inputAddC inputGestion', 'placeholder': 'Compte'}}) }}
+			
+			{{ form_label(formAddAccount.soldeInitial, "Solde actuel du compte", {'label_attr': {'class':'labelSolde labelGestion'}}) }}
+			
+			{{ form_errors(formAddAccount.soldeInitial) }}
+			
+			{{ form_widget(formAddAccount.soldeInitial, {'attr': {'class': 'inputSolde inputGestion', 'placeholder':'Solde'}}) }}
+			
+			{{ form_widget(formAddAccount.save, {'attr': {'class': 'inputBtnGestion'}}) }}
+			
+			{{ form_rest(formAddAccount) }}
+			
+			{{ form_end(formAddAccount) }}
+		</div>
+		<div class="gestionForm formSupA">
+			<div class="formGestionTitle">
+				Suppression de compte bancaire
+			</div>
+			
+			{{ form_start(formSupAccount) }}
+			
+			{{ form_label(formSupAccount.accounts, "Nom du compte bancaire", {'label_attr': {'class': 'labelSup labelGestion'}}) }}
+			
+			{{ form_widget(formSupAccount.accounts, {'attr':{'class': 'selectEntity'}}) }}
+						
+            {{ form_widget(formSupAccount.save, {'attr': {'class': 'inputBtnGestion'}}) }}
+            
+            {{ form_rest(formSupAccount) }}
+            {{ form_end(formSupAccount) }}
+		</div>
+		<div class="gestionForm formAddC">
+			<div class="formGestionTitle">
+				Ajout d'une catégorie
+			</div>
+			
+			{{ form_start(formAddCat) }}
+			
+			{{ form_errors(formAddCat) }}
+			
+			{{ form_label(formAddCat.catName, "Nom de la Catégorie", {'label_attr': {'class': 'labelAdd labelGestion'}}) }}
+			
+			{{ form_errors(formAddCat.catName) }}
+			
+			{{ form_widget(formAddCat.catName, {'attr': {'class': 'inputAddC inputGestion', 'placeholder': 'Catégorie'}}) }}
+			
+			{{ form_widget(formAddCat.save, {'attr': {'class': 'inputBtnGestion'}}) }}
+			
+			{{ form_rest(formAddCat) }}
+			
+			{{ form_end(formAddCat) }}
+		</div>
+		<div class="gestionForm formSupC">
+			<div class="formGestionTitle">
+				Suppression d'une catégorie
+			</div>
+		
+			{{ form_start(formRemoveCat) }}
+			
+			{{ form_label(formRemoveCat.categoryName, "Nom de la catégorie", {'label_attr': {'class': 'labelSup labelGestion'}}) }}
+			
+			{{ form_widget(formRemoveCat.categoryName, {'attr':{'class': 'selectEntity'}}) }}
+						
+            {{ form_widget(formRemoveCat.save, {'attr': {'class': 'inputBtnGestion'}}) }}
+            
+            {{ form_rest(formRemoveCat) }}
+            {{ form_end(formRemoveCat) }}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/compteRendu/debitCategorie.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/compteRendu/debitCategorie.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	Compte-rendu : Dépense par mois et par catégorie.
+{% endblock %}
+
+{% block body %}
+	<div class="containerComptesBtns">
+		{% for compte in comptes %}
+			<div class="compteBtn">
+				{{ compte.accountName }}
+			</div>
+		{% endfor %}
+	</div>
+	
+	<div class="containerMonthsBtns">
+		<div class="filterMonth">
+			Janvier
+		</div>
+		<div class="filterMonth">
+			Février
+		</div>
+		<div class="filterMonth">
+			Mars
+		</div>
+		<div class="filterMonth">
+			Avril
+		</div>
+		<div class="filterMonth">
+			Mai
+		</div>
+		<div class="filterMonth">
+			Juin
+		</div>
+		<div class="filterMonth">
+			Juillet
+		</div>
+		<div class="filterMonth">
+			Août
+		</div>
+		<div class="filterMonth">
+			Septembre
+		</div>
+		<div class="filterMonth">
+			Octobre
+		</div>
+		<div class="filterMonth">
+			Novembre
+		</div>
+		<div class="filterMonth">
+			Décembre
+		</div>
+	</div>
+	<div class="containerAccountCards">
+	{% for arrayTypeMC in arraysTypeMC %}
+		<div class="containerCards">
+		{% for typeMC in arrayTypeMC %}
+			<div class="carteMC carteFill">
+				<img class="imgBack" src="{{ asset('images/carteBackground.jpg') }}">
+			    <div class="rowMC rowCategory">
+			    	{{ typeMC.categoryName }}
+			    </div>
+			    <div class="rowMC rowMontant">
+		            {{ typeMC.montant }} €
+				</div>
+			    <div class="rowMC rowPercent">
+			    	<div class="maxPercent">
+			    		<div class="nbPercent">
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="rowMC rowNbPercent">
+					{{ typeMC.percent|number_format(2, '.') }}%
+				</div>
+				<div class="rowHidden rowMY">
+					{{ typeMC.monthYear }}
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}

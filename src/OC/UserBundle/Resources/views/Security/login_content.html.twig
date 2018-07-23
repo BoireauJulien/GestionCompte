@@ -1,0 +1,39 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<div class="containerUserForm containerLogin">
+	<div class="rowUserForm rowUserTitle">
+		CONNEXION
+		{% if error %}
+    		<div class="errorUserForm">!! {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+	</div>
+	<form action="{{ path("fos_user_security_check") }}" method="post">
+        {% if csrf_token %}
+        	<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+		
+		<div class="rowUserForm rowUserLabel">
+			<label for="username" class="labelUser">{{ 'security.login.username'|trans }}</label>
+		</div>
+    	<div class="rowUserForm rowUserInput">
+    		<input type="text" id="username" class="inputUser" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+    	</div>
+		
+		<div class="rowUserForm rowUserLabel">
+			<label for="password" class="labelUser">{{ 'security.login.password'|trans }}</label>
+		</div>
+   		<div class="rowUserForm rowUserInput">
+   			<input type="password" id="password" class="inputUser" name="_password" required="required" autocomplete="current-password" />
+   		</div>
+    	
+		<div class="rowUserForm rowUserCheck">
+			<input type="checkbox" id="remember_me" class="inputCheckUser" name="_remember_me" value="on" />
+    		<label for="remember_me" class="labelCheckUser">{{ 'security.login.remember_me'|trans }}</label>
+    	</div>
+    	
+		<div class="rowUserForm rowUserSubmit">
+			<input type="submit" id="_submit" class="inputSubmitUser" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+		</div>
+	</form>
+</div>

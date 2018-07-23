@@ -1,0 +1,665 @@
+@charset "ISO-8859-1";
+
+body{
+	margin-left: 0%;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(230,230,230);
+}
+.overlayBackground
+{
+	position: absolute;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.header{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	background: linear-gradient(to right bottom, rgb(255,255,255) 70%, rgb(94,226,251));
+	text-align: center;
+	color: rgb(106,106,106);
+	font-size: 46px;
+	text-shadow: 0px -1px 0px rgba(0,0,0,0.8);
+	box-shadow: 0 5px 10px 1px rgba(0,0,0,0.3);
+	z-index: 3;
+	font-family: 'Merienda', cursive;
+}
+.infoPage
+{
+	position: absolute;
+	width: 20%;
+	height: 40%;
+	font-size: 16px;
+	left: 2%;
+	top: 25%;
+	text-align: left;
+	color: rgb(0,170,242);
+}
+.infoUser
+{
+	position: absolute;
+	right: 2%;
+	z-index: 3;
+	border-radius: 50%;
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+	transition: box-shadow 1s;
+}
+.infoUser:hover
+{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.1);
+}
+.userCo
+{
+	color: rgb(22,188,49);
+}
+.userDeco
+{
+	color: rgb(222,21,21);
+}
+.iconUser
+{
+	position: absolute;
+	left: 0%;
+	width: 100%;
+}
+.containerProfil
+{
+	position: absolute;
+	left: 83%;
+	top: -20%;
+	z-index: 2;
+	background-color: rgb(255,255,255);
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.4);
+	text-align: center;
+}
+.nameUser
+{
+	width: 100%;
+	height: 40%;
+	font-size: 24px;
+	line-height: 40px;
+	box-shadow: 0 1px 0 0 rgb(0,163,222); 
+}
+.btnLog
+{
+	position: absolute;
+	top: 50%;
+	text-decoration: none;
+	font-size: 20px;
+	text-shadow: none;
+	border-radius: 50%;
+	transition: box-shadow 1s;
+}
+.btnLog:hover
+{
+	color: white;
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+}
+.decoBtn
+{
+	left: 15%;
+	color: rgb(225,0,0);
+}
+.decoBtn:hover
+{
+	background-color: rgb(225,0,0);
+}
+.iconLog
+{
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+.settingsBtn
+{
+	right: 15%;
+	color: rgb(0,163,222);
+}
+.settingsBtn:hover
+{
+	background-color: rgb(0,163,222);
+}
+.homeBtn
+{
+	left: 42.5%;
+	color: rgb(0,163,222);
+}
+.homeBtn:hover
+{
+	background-color: rgb(0,163,222);
+}
+.coBtn
+{
+	left: 20%;
+	color:rgb(28,165,10);
+}
+.coBtn:hover
+{
+	background-color: rgb(28,165,10);
+}
+.registerBtn
+{
+	right: 20%;
+	color: rgb(0,163,222);
+}
+.registerBtn:hover
+{
+	background-color: rgb(0,163,222);
+}
+.menuLeft{
+	position: absolute;
+	left: 0%;
+	top: 20%;
+	height: 80%;
+	width: 20%;
+	background: linear-gradient(to bottom right, rgb(127,202,234), rgb(230,230,230), rgb(230,230,230));
+	z-index: 2;
+	font-family: 'Kanit', sans-serif;
+}
+.containerBody{
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	width: 80%;
+	height: 80%;
+	z-index: 1;
+	background-color: rgb(230,230,230);
+}
+.menuBtnLeft{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 45px;
+	margin-top: 10px;
+	text-decoration: none;
+	text-align: center;
+	border: none;
+	color: rgb(80,80,80);
+	font-size: 22px;
+	line-height: 45px;
+	transition: box-shadow 1s, background-color 1s;
+}
+.menuBtnLeft:hover{
+	background-color: rgb(0,178,220);
+	font-size: 30px;
+	color: white;
+	box-shadow: 0 2px 10px 3px rgba(0,0,0,0.7);
+}
+
+/* page not CONECT */
+
+.titleNotConnect
+{
+	Width: 100%;
+	text-align: center;
+	font-size: 30px;
+	font-style: italic;
+	font-weight: bold;
+	color: rgb(222,10,0);
+	font-family: 'Kanit', sans-serif;
+}
+
+.messageNotConnect
+{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 5%;
+	padding-top: 10px;
+	font-size: 20px;
+	text-align: center;
+	box-shadow: 0 -2px 0 0 rgb(222,10,0);
+}
+
+/* Definition des grosses cartes */
+.largeCard
+{
+	position: absolute;
+	width: 35%;
+	height: 40%;
+	color: white;
+	box-shadow: 2px 2px 20px 3px rgba(0,0,0,0.7);
+	text-align: center;
+	font-size: 22px;
+	line-height: 50px;
+	user-select: none;
+}
+.littleCard
+{
+	position: absolute;
+	width: 25%;
+	height: 30%;
+	box-shadow: 2px 2px 20px 3px rgba(0,0,0,0.7);
+	text-align: center;
+	font-size: 22px;
+	color: white;
+	line-height: 70px;
+	user-select: none;
+}
+.btnLargeCard
+{
+	position: absolute;
+	top:5%;
+	width: 25%;
+	height: 10%;
+	text-align: center;
+	user-select: none;
+	color: white;
+	font-size: 20px;
+	line-height: 50px;
+	border-radius: 10px;
+}
+.btnLittleCard
+{
+	position: absolute;
+	top: 5%;
+	width: 15%;
+	height: 10%;
+	text-align: center;
+	user-select: none;
+	color: white;
+	font-size: 16px;
+	line-height: 45px;
+	border-radius: 10px;
+}
+.containerForm
+{
+	display: none;
+	position: absolute;
+	width: 50%;
+	height: 70%;
+	top: 20%;
+	left: 25%;
+	background-color: rgba(255,255,255,0.3);
+	box-shadow: 2px 2px 10px 3px rgba(0,0,0,0.5);
+	overflow: hidden;
+	border-radius: 20px;
+}
+.inputStyle
+{
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5);
+	border: none;
+	text-align: center;
+	transition: box-shadow 1s;
+}
+
+.inputStyle:focus
+{
+	outline: none;
+	box-shadow: -2px -2px 2px rgba(0,0,0,0.8),
+				inset -1px -1px 20px rgba(0,0,0,0.5),
+				0 2px 0 0 rgb(242,117,0);
+}
+
+/* Compte rendu Style */
+.containerMonths
+{
+	position: absolute;
+	top: 40px;
+	width: 100%;
+	height: 40px;
+	padding-left: 2%;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.6);
+	font-family: 'Maven Pro', sans-serif;
+}
+.filterMonth
+{
+	width: 8%;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	user-select: none;
+	transition: box-shadow 1s, color 1s;
+}
+.filterMonth:hover
+{
+	cursor: pointer;
+	box-shadow: inset 0 -2px 0 rgb(0,200,233);
+}
+
+.selectYearContainer
+{
+	margin-top: 20px;
+	width: 100%;
+	height: 50px;
+	user-select: none;
+}
+.switchBtn
+{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background-color: rgb(190,190,190);
+	font-size: 40px;
+	text-align: center;
+}
+.switchBtn:hover
+{
+	cursor: pointer;
+	box-shadow: 0 0 10px 2px rgba(0,0,0,0.8);
+	background-color: rgb(150,150,150);
+	color: white;
+}
+.lessBtn
+{
+	left: 30%;
+}
+.moreBtn
+{
+	right: 30%;
+	font-weight: bold;
+}
+.selectYear
+{
+	position: absolute;
+	height: 50px;
+	width: 20%;
+	left: 40%;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Maven Pro', sans-serif;
+}
+
+.containerComptesBtns
+{
+	position: relative;
+	margin-top: 5%;
+	margin-left: 5%;
+	width: 90%;
+	height: 40px;
+	overflow: hidden;
+	font-family: 'Maven Pro', sans-serif;
+}
+.compteBtn
+{
+	position: relative;
+	background-color: rgb(0,153,170);
+	float: left;
+	text-align: center;
+	box-shadow: inset -1px 0 0 rgb(50,50,50),
+				inset 1px 0 0 rgb(50,50,50);
+	user-select: none;
+}
+.compteBtn:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.containerAccountCards
+{
+	width: 100%;
+	margin-left: 0;
+	margin-top: 1%;
+}
+.containerCards
+{
+	width: 90%;
+	display: inline-block;
+	margin-left: 5%;
+}
+.imgBack
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	height: 8px;
+	background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: rgb(148,56,152);
+}
+::-webkit-scrollbar-thumb:hover
+{
+	background-color: rgb(216,90,222);
+}
+::-webkit-scrollbar-corner
+{
+	background-color: transparent;
+}
+
+/* Style des formulaires utilisateurs */
+::selection
+{
+	background-color: rgb(100,100,100);
+	color: white;
+}
+
+.containerUserForm
+{
+	position: absolute;
+	height: 80%;
+	width: 40%;
+	left: 20%;
+	top: 0;
+	box-shadow: 2px 2px 10px 3px rgba(0,0,0,0.4);
+	border-radius: 15px;
+	color: white;
+	background: linear-gradient(to bottom, rgb(0,116,157), rgb(0,133,189), rgb(169,0,133));
+	overflow: hidden;
+}
+form
+{
+	position: relative;
+	width: 100%;
+	height: 88%;
+}
+.rowUserForm
+{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+.rowUserTitle
+{
+	height: 10%;
+	padding-top: 5%;
+	font-size: 26px;
+	font-family: 'Merienda', cursive;
+	user-select: none;
+}
+.errorUserForm
+{
+	color: black;
+	font-style: italic;
+	font-size: 16px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.rowUserLabel
+{
+	height: 6%;
+	padding-top: 2%;
+	font-size: 18px;
+	font-family: 'Courgette', cursive;
+	user-select: none;
+}
+.rowLabelProfil
+{
+	font-size: 24px;
+	box-shadow: 0 -1px 0 0 rgba(0,0,0,0.2);
+}
+.rowUserInput
+{
+	height: 8%;
+	padding-top: 2%;
+	font-size: 16px;
+}
+.rowData
+{
+	font-size: 20px;
+}
+.rowDataAccount
+{
+	width: 80%;
+	margin-left: 10%;
+	height: 30%;
+	overflow: scroll;
+}
+.rowUserCheck
+{
+	height: 10%;
+	padding-top: 2%;
+	font-size: 18px;
+	user-select: none;
+}
+.rowUserSubmit
+{
+	position: relative;
+	height: 10%;
+	margin-top: 5%;
+	user-select: none;
+}
+.inputUser
+{
+	width: 50%;
+	height: 70%;
+	border: none;
+	background-color: transparent;
+	color: white;
+	box-shadow: 0 2px 0 0 rgb(255,255,255);
+	padding-left: 3%;
+	transition: box-shadow 1s;
+}
+.inputUser:focus
+{
+	outline: none;
+	box-shadow: 0 2px 0 0 rgb(255,123,0);
+}
+.inputUser:valid
+{
+	outline: none;
+	box-shadow: 0 2px 0 0 rgb(0,190,0);
+}
+.inputUser:placeholder
+{
+	color: white;
+	font-style: italic;
+}
+.mdpViewBtn
+{
+	position: absolute;
+	right: 15%;
+	top: 25%;
+	user-select: none;
+}
+.viewIcon
+{
+	font-size: 10px;
+	transition: color 1s;
+}
+.viewIcon:hover
+{
+	cursor: pointer;
+	color: rgb(255,123,0);
+}
+.inputSubmitUser
+{
+	height: 100%;
+	width: 40%;
+	border: none;
+	font-family: 'Courgette', cursive;
+	font-size: 18px;
+	border-radius: 30px;
+	box-shadow: 2px 3px 4px 0 rgba(0,0,0,0.6);
+	transition: box-shadow 1s, background-color 2s, color 1s;
+}
+.inputSubmitUser:hover
+{
+	cursor: pointer;
+	box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.8),
+				inset 2px 2px 10px rgb(255,139,235);
+	background-color: rgb(0,126,238);
+	color: white;
+}
+.inputSubmitUser:focus
+{
+	outline: none;
+	box-shadow: 0 0 0 2px rgb(0,200,238);
+}
+
+/* Cachons la case à cocher */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+ 
+/* on prépare le label */
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative; /* permet de positionner les pseudo-éléments */
+  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
+  cursor: pointer;    /* affiche un curseur adapté */
+}
+
+/* Aspect des checkboxes */
+/* :before sert à créer la case à cocher */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px; /* dim. de la case */
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px; /* angles arrondis */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3) /* légère ombre interne */
+}
+ 
+/* Aspect général de la coche */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0; left: 4px;
+  font-size: 14px;
+  color: #09ad7e;
+  transition: all .2s; /* on prévoit une animation */
+}
+/* Aspect si "pas cochée" */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0; /* coche invisible */
+  transform: scale(0); /* mise à l'échelle à 0 */
+}
+/* Aspect si "cochée" */
+[type="checkbox"]:checked + label:after {
+  opacity: 1; /* coche opaque */
+  transform: scale(1); /* mise à l'échelle 1:1 */
+}
+
+/* aspect désactivée */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+/* styles de la coche (si cochée/désactivée) */
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+/* on style aussi le label quand désactivé */
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+ 
+/* aspect au focus de l'élément */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  box-shadow: 0 2px 0 0 rgb(255,123,0);
+}

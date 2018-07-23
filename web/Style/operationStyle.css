@@ -1,0 +1,247 @@
+@charset "ISO-8859-1";
+
+/* Definition des cartes opérations */
+.opCard
+{
+	top: 20%;
+	background: linear-gradient(to bottom right, rgba(0,116,189,0.2), rgb(0,207,219), rgb(0,116,189));
+	background-color: rgb(100,100,100);
+	border-radius: 10px;
+	transition: background-color 1s, height 0.5s, width 0.5s, top 0.5s, left 0.5s;
+	font-family: 'Marcellus', serif;
+}
+.opCard:hover
+{
+	top: 18%;
+	height: 44%;
+	width: 40%;
+	background-color: rgb(232,0,179);
+	cursor: pointer;
+}
+.opCreditCard
+{
+	left: 55%;
+}
+.opCreditCard:hover
+{
+	left: 52.5%;
+}
+.opDebitCard
+{
+	left: 10%;
+}
+.opDebitCard:hover
+{
+	left: 7.5%;
+}
+.opText
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	font-size: 30px;
+	font-weight: bold;
+	width: 100%;
+	line-height: 200px;
+	user-select: none;
+}
+.opText:hover
+{
+	font-size: 60px;
+	text-shadow: -2px -1px 0px rgba(0,0,0,0.7);
+}
+.opBtnCardL
+{
+	display: none;
+	background: linear-gradient(to bottom right, rgba(0,116,189,0.2), rgb(0,207,219), rgb(0,116,189));
+	background-color: rgb(100,100,100);
+	font-family: 'Marcellus', serif;
+}
+.opBtnCardL:hover
+{
+	/*background-color: rgb(0,139,171);*/
+	box-shadow: inset 2px 2px 1px rgba(255,255,255,0.6),
+				inset -2px -2px 1px rgba(0,0,0,0.6);
+	text-shadow: -2px -1px 0px rgba(0,0,0,0.7);
+	cursor: pointer;
+	font-size: 28px;
+}
+.opBtnDebit
+{
+	left: 20%;
+	transition: background-color 1s, box-shadow 0.5s;
+}
+.opBtnCredit
+{
+	left: 55%;
+	transition: background-color 1s, box-shadow 0.5s;
+}
+
+/* gestion des formulaires Debit et Credit */
+.opForm
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 101%;
+}
+.opDebitForm
+{
+	background: linear-gradient(to bottom, rgb(0,125,204), rgb(0,177,193), rgb(197,62,62));
+}
+.opCreditForm
+{
+	background: linear-gradient(to bottom, rgb(0,125,204), rgb(0,177,193), rgb(64,175,63));
+}
+.opTitle
+{
+	postion:relative;
+	width: 100%;
+	height: 20%;
+	top:0%;
+	left:0%;
+	font-size: 30px;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Kanit', sans-serif;
+}
+.opDebitTColor
+{
+	color: rgb(150,0,0);
+	box-shadow: 0 1px 0 0 rgb(150,0,0);
+}
+.opCreditTColor
+{
+	color: rgb(0,96,0);
+	box-shadow: 0 1px 0 0 rgb(0,96,0);
+}
+.opField
+{
+	position:absolute;
+	width: 100%;
+	height: 60%;
+	top: 0%;
+	left: 101%;
+}
+.opNav
+{
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	top: 80%;
+	left:0%;
+}
+.btnNav
+{
+	position: absolute;
+	width: 20%;
+	top:15%;
+	background-color: rgba(0,68,84,0.5);
+	color:white;
+	text-align: center;
+	font-size: 22px;
+	line-height: 45px;
+	border-radius: 10px;
+	user-select:none;
+	font-family: 'Marcellus', serif;
+	transition: background-color 1s, box-shadow 0.5s;
+}
+.btnNav:hover
+{
+	background-color: rgb(0,139,171);
+	font-size: 30px;
+	box-shadow: inset 2px 2px 1px rgba(255,255,255,0.6),
+				inset -2px -2px 1px rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+.btnBack
+{
+	left: 10%;
+}
+.btnNext
+{
+	right: 10%;
+}
+.opLabel
+{
+	position: absolute;
+	width: 100%;
+	top: 20%;
+	left: 0%;
+	font-size: 20px;
+	text-align: center;
+	font-family: 'Maven Pro', sans-serif;
+}
+.entityOpField
+{
+	position: absolute;
+	width: 80%;
+	height: 20%;
+	left: 10%;
+	top: 40%;
+	font-size: 20px;
+	font-family: 'Maven Pro', sans-serif;
+}
+.dateOpField
+{
+	position: absolute;
+	width: 80%;
+	height: 20%;
+	left: 10%;
+	top: 40%;
+	font-size: 20px;
+	font-family: 'Maven Pro', sans-serif;	
+}
+.opSimpleField
+{
+	position: absolute;
+	width: 80%;
+	height: 20%;
+	left: 10%;
+	top: 40%;
+	font-size: 20px;
+	font-family: 'Maven Pro', sans-serif;
+}
+.hiddenChoiceField
+{
+	display:none;
+}
+
+.opBtnSubmit
+{
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	top: 20%;
+	left: 35%;
+	border: none;
+	border-radius: 50%;
+	background-color: rgba(2,101,0);
+	color: white;
+	font-size: 22px;
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 2px rgba(0,0,0,0.6);
+	font-family: 'Marcellus', serif;
+	transition: background-color 1s, box-shadow 0.5s;
+}
+.opBtnSubmit:focus
+{
+	outline: none;
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 2px rgba(0,0,0,0.6),
+				0 0 0 3px rgb(0,153,204);
+}
+.opBtnSubmit:hover
+{
+	box-shadow: inset 4px 4px 20px rgba(255,255,255,0.7),
+				inset -4px -4px 10px rgba(0,0,0,0.5),
+				0 0 20px 8px rgba(0,0,0,0.7);
+	background-color: rgb(3,152,0);
+	cursor: pointer;
+	font-size: 30px;
+	text-shadow: -2px -1px 0px rgba(0,0,0,0.7);
+}

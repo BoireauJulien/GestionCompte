@@ -1,0 +1,146 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block title %}
+	ajout - {{ parent() }}
+{% endblock %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/operationStyle.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/addOperation.js') }}"></script>
+{% endblock %}
+
+{% block infoPage %}
+	L'ajout d'opérations
+{% endblock infoPage %}
+{% block body %}
+	<div class="largeCard opCard opDebitCard">
+		Ajout d'une opération:
+		<div class="opText">- Débit -</div>
+	</div>
+	<div class="largeCard opCard opCreditCard">
+		Ajout d'une opération:
+		<div class="opText"> - Crédit -</div>
+	</div>
+	<div class="btnLargeCard opBtnCardL opBtnDebit">- Débit -</div>
+	<div class="btnLargeCard opBtnCardL opBtnCredit">- Crédit -</div>
+	
+	<div class="containerForm">
+		<div class="opForm opDebitForm">
+			<div class="opTitle opDebitTColor">
+				Opération: Débit
+			</div>
+			{{ form_start(formDebit) }}
+			
+			{{ form_errors(formDebit) }}
+			<div class="opDebitField opField">
+				{{ form_label(formDebit.compte, "Nom du compte bancaire", {'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formDebit.compte) }}
+				
+				{{ form_widget(formDebit.compte, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+			</div>
+			<div class="opDebitField opField">
+				{{ form_label(formDebit.dateOp, "Date de l'opération", {'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formDebit.dateOp) }}
+				
+				{{ form_widget(formDebit.dateOp, {'attr': {'class' : 'dateOpField inputStyle'}}) }}
+			</div>
+			<div class="opDebitField opField">
+				{{ form_label(formDebit.category, "Category de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
+				
+				{{ form_errors(formDebit.category) }}
+				
+				{{ form_widget(formDebit.category, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+			</div>
+			<div class="opDebitField opField">
+				{{ form_label(formDebit.detail, "Détail de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
+				
+				{{ form_errors(formDebit.detail) }}
+				
+				{{ form_widget(formDebit.detail, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+			</div>
+			<div class="opDebitField opField">
+				{{ form_label(formDebit.montant, "Montant de l'opération" ,{'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formDebit.montant) }}
+				
+				{{ form_widget(formDebit.montant, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+			</div>
+			<div class="hiddenChoiceField">
+				{{ form_row(formDebit.isDebit) }}
+			</div>
+			<div class="opDebitField opField">
+				{{ form_widget(formDebit.save, {'attr': {'class': 'opBtnSubmit'}}) }}
+			</div>
+			{{ form_rest(formDebit) }}
+			
+			{{ form_end(formDebit) }}
+			<div class="opNav">
+				<div class="btnBack btnNav">back</div>
+				<div class="btnNext btnNav">next</div>
+			</div>
+		</div>
+		<div class="opForm opCreditForm">
+			<div class="opTitle opCreditTColor">
+				Opération: Crédit
+			</div>
+			{{ form_start(formCredit) }}
+			
+			{{ form_errors(formCredit) }}
+			<div class="opCreditField opField">
+				{{ form_label(formCredit.compte, "Nom du compte bancaire", {'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formCredit.compte) }}
+				
+				{{ form_widget(formCredit.compte, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+			</div>
+			<div class="opCreditField opField">
+				{{ form_label(formCredit.dateOp, "Date de l'opération", {'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formCredit.dateOp) }}
+				
+				{{ form_widget(formCredit.dateOp, {'attr': {'class' : 'dateOpField inputStyle'}}) }}
+			</div>
+			<div class="opCreditField opField">
+				{{ form_label(formCredit.category, "Category de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
+				
+				{{ form_errors(formCredit.category) }}
+				
+				{{ form_widget(formCredit.category, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+			</div>
+			<div class="opCreditField opField">
+				{{ form_label(formCredit.detail, "Détail de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
+				
+				{{ form_errors(formCredit.detail) }}
+				
+				{{ form_widget(formCredit.detail, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+			</div>
+			<div class="opCreditField opField">
+				{{ form_label(formCredit.montant, "Montant de l'opération" ,{'label_attr': {'class' : 'opLabel'}}) }}
+				
+				{{ form_errors(formCredit.montant) }}
+				
+				{{ form_widget(formCredit.montant, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+			</div>
+			<div class="hiddenChoiceField">
+				{{ form_row(formCredit.isDebit) }}
+			</div>
+			<div class="opCreditField opField">
+				{{ form_widget(formCredit.save, {'attr': {'class': 'opBtnSubmit'}}) }}
+			</div>
+			{{ form_rest(formCredit) }}
+			 
+			{{ form_end(formCredit) }}
+			<div class="opNav">
+				<div class="btnBack btnNav">back</div>
+				
+				<div class="btnNext btnNav">next</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
