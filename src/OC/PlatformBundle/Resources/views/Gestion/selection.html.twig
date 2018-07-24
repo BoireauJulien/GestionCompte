@@ -5,8 +5,8 @@
 {% endblock meta %}
 
 {% block scriptAndStyle %}
-	<link rel="stylesheet" href="{{ asset('Style/statistiques.css') }}">
-	<script type="text/javascript" src="{{ asset('Script/statistiques.js') }}"></script>
+	<link rel="stylesheet" href="{{ asset('Style/selection.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/selection.js') }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -14,73 +14,21 @@
 {% endblock %}
 
 {% block infoPage %}
-	Les statistiques
+	La selection
 {% endblock %}
 
 {% block body %}
-	<div class="statTitle">
-		Les moyennes sur le débit
+	<div class="selectionTitle">
+		Selectionnez une catégorie:
 	</div>
-	<div class="containerCartesStat">
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Catégorie<br/>&<br/>mois
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Par categorie & année
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Total par mois
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Total par année
-			</div>
-		</a>
+	<div class="containerCategories">
+		{% for category in categories %}
+			<a href="/selection/resultat={{ category.catName }}" class="aSelection">
+				<div class="categoryName">
+				    {{ category.catName }}
+				</div>
+			</a>
+	    {% endfor %}
 	</div>
-	<div class="statTitle">
-		Les valeurs maximales de débit
-	</div>
-	<div class="containerCartesStat">
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Mois
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Année
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Global
-			</div>
-		</a>
-	</div>
-	<div class="statTitle">
-		Les valeurs maximales de crédit
-	</div>
-	<div class="containerCartesStat">
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Mois
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Année
-			</div>
-		</a>
-		<a href="" class="aStat">
-			<div class="carteStat">
-				Global
-			</div>
-		</a>
-	</div>
+	
 {% endblock %}

@@ -1,0 +1,82 @@
+@charset "ISO-8859-1";
+
+.categoryTitle
+{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.containerLignesCompte
+{
+	width: 80%;
+	height: 70%;
+	margin-left: 10%;
+	margin-top: 1%;
+	overflow-y: scroll;
+}
+
+.rowTitleSelection
+{
+	margin-top: 2%;
+	margin-left: 10%;
+	width: 80%;
+	font-size: 20px;
+	background-color: rgb(0,41,53);
+	color: white;
+	display: inline-block;
+}
+
+.compteTitle
+{
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 24px;
+	color: rgb(0,170,242);
+	background-color: rgb(50,50,50);
+}
+
+.rowDataLC
+{
+	width: 100%;
+	font-size: 18px;
+	color: white;
+	display: inline-block;
+}
+
+.color1S
+{
+	background-color: rgb(100,100,100);
+}
+
+.color2S
+{
+	background-color: rgb(130,130,130);
+}
+
+.colSelect
+{
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	text-align: center;
+}
+
+.colDateS
+{
+	width: 25%;
+}
+.colDetailS
+{
+	width: 50%;
+	background-color: rgba(0,0,0,0.2);
+}
+.colMontantS
+{
+	width: 25%;
+}

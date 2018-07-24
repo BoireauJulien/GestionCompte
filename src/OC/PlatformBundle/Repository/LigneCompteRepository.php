@@ -3,6 +3,7 @@
 namespace OC\PlatformBundle\Repository;
 
 use OC\PlatformBundle\Entity\Compte;
+use OC\PlatformBundle\Entity\Category;
 
 
 
@@ -65,6 +66,19 @@ class LigneCompteRepository extends \Doctrine\ORM\EntityRepository
             'monthYear' => $monthYear,
             'compte' => $compte
         ));
+        return $queryBuilder->getQuery()->getResult();
+    }
+    
+    public function getAllLigneCompteByCategory(Compte $compte, Category $category)
+    {
+        $queryBuilder = $this->createQueryBuilder('lc');
+        $queryBuilder->where('lc.compte = :compte')
+                     ->andWhere('lc.category = :category')
+                     ->orderBy('lc.dateOp', 'DESC')
+                     ->setParameters(array(
+                         'compte' => $compte,
+                         'category' => $category
+                     ));
         return $queryBuilder->getQuery()->getResult();
     }
     

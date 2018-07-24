@@ -63,3 +63,10 @@ oc_user_profile:
     path: /profil-utilisateur
     defaults:
         _controller: OCPlatformBundle:Compte:profile
+
+# ------------------------------ SELECTION ----------------------------
+
+oc_selection_resultat:
+    path: /selection/resultat={catName}
+    defaults:
+        _controller: OCPlatformBundle:Compte:select 

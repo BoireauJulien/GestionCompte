@@ -1,0 +1,52 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block meta %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% endblock meta %}
+
+{% block scriptAndStyle %}
+	<link rel="stylesheet" href="{{ asset('Style/resultatSelection.css') }}">
+{% endblock %}
+
+{% block title %}
+	selection - {{ parent() }}
+{% endblock %}
+
+{% block infoPage %}
+	La selection: résultat
+{% endblock %}
+
+{% block body %}
+	<div class="categoryTitle">
+		{{ catName }}
+	</div>
+	<div class="rowTitleSelection">
+		<div class="colSelect colDateS">Date</div>
+		<div class="colSelect colDetailS">Détail</div>
+		<div class="colSelect colMontantS">Montant</div>
+	</div>
+	<div class="containerLignesCompte">
+		{% for arrayLC in arraysLC %}
+			<div class="compteTitle">
+			    {{ comptes[loop.index - 1].accountName }}
+			</div>
+			{% for ligneCompte in arrayLC %}
+				{% if loop.index is divisible by(2) %}
+				<div class="rowDataLC color1S">
+				{% else %}
+				<div class="rowDataLC color2S">
+				{% endif %}
+					<div class="colSelect colDateS">
+						{{ ligneCompte.dateOp|date('d/m/Y') }}
+					</div>
+				    <div class="colSelect colDetailS">
+				    	{{ ligneCompte.detail }}
+				    </div>
+					<div class="colSelect colMontantS">
+						{{ ligneCompte.montant }}
+					</div>
+				</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -28,4 +28,13 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
         ->setParameter('user', $user);
         return $queryBuilder;
     }
+    
+    public function getCategoryByCatName($catName)
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder->where('c.catName = :catName')
+                     ->setParameter('catName', $catName);
+        
+        return $queryBuilder->getQuery()->getResult();
+    }
 }

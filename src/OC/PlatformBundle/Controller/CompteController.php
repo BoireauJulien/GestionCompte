@@ -150,9 +150,31 @@ class CompteController extends Controller
         ));
     }
     
-    public function selectionAction()
+    public function selectionAction(Request $request)
     {
-        return $this->render('OCPlatformBundle:Gestion:selection.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $categories = $em->getRepository(Category::class)->getCategoriesByUser($user);
+        return $this->render('OCPlatformBundle:Gestion:selection.html.twig', array('categories' => $categories));
+    }
+    
+    public function selectAction($catName, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $category = $em->getRepository(Category::class)->getCategoryByCatName($catName);
+        $comptes = $em->getRepository(Compte::class)->getCompteByUser($user);
+        $repositoryLC = $em->getRepository(LigneCompte::class);
+        $arraysLigneCompte = array();
+        foreach($comptes as $compte){
+            array_push($arraysLigneCompte, $repositoryLC->getAllLigneCompteByCategory($compte, $category[0]));
+        }
+        
+        return $this->render('@OCPlatform/Gestion/resultatSelection.html.twig', array(
+            'arraysLC' => $arraysLigneCompte,
+            'catName' => $catName,
+            'comptes' => $comptes
+        ));
     }
     
     public function compteRenduAction()
