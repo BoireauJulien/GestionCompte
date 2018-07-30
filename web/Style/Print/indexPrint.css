@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+
+.menuLeft
+{
+	display: none;
+}
+
+.containerLittleView
+{
+	position: relative;
+	overflow: visible;
+	left: 0;
+	margin: 0;
+	border: none; 
+}
+
+.rowScreenAccueil
+{
+	box-shadow: none;
+	background-color: white;
+	font-size: 25pt;
+	margin-top: 10px;
+}
+
+.colCategory
+{
+	width: 20%;
+}
+
+.soldeTitle
+{
+	display: none;
+}
+
+.containerSolde
+{
+	position: relative;
+	margin-bottom: 0%;
+}

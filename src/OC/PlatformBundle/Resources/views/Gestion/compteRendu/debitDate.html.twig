@@ -35,9 +35,7 @@
 			            {{ typeMD.date|date('d/m/Y') }}
 			        </div>
 					<div class="montantMD rowCarteMD">
-						<div class="montantCenter">
-							{{ typeMD.montant }}
-						</div>
+							{{ typeMD.montant|number_format(2,'.',',') }}€
 			        </div> 
 			    </div>
 		    {% endfor %}

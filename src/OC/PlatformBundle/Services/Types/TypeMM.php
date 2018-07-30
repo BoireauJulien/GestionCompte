@@ -78,7 +78,8 @@ class TypeMM
     {
         $isEqual = false;
         if($this->month == $typeMM->getMonth() && 
-            ($this->montantCredit == $typeMM->getMontantCredit() || $this->montantDebit == $typeMM->getMontantDebit()) &&
+            (number_format($this->montantCredit,2) == number_format($typeMM->getMontantCredit(), 2) 
+                || number_format($this->montantDebit, 2) == number_format($typeMM->getMontantDebit(), 2)) &&
             $this->account == $typeMM->getAccount()){
             $isEqual = true;
         }

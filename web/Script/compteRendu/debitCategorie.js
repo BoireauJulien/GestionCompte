@@ -8,10 +8,18 @@ $(document).ready(function(){
 	var currentMonth = currentDate.getMonth();
 	var currentYear = currentDate.getFullYear();
 	var isAnimated = false;
+	var windowHeight = $(window).height();
 	
+	initiateCarteStyle();
 	initiateCompteBtn();
 	initiateMonthBtn();
 	setWidthPercent();
+	
+	window.onresize = function(){
+		windowHeight = $(window).height();
+		
+		initiateCarteStyle();
+	}
 	
 	for(var i = 0; i < compteBtns.length; i++){
 		setCompteBtnWidth(i);
@@ -20,6 +28,18 @@ $(document).ready(function(){
 	
 	for(var i = 0; i < monthBtns.length; i++){
 		$(monthBtns[i]).on('click', clickMonthBtn(i));
+	}
+	
+	function initiateCarteStyle()
+	{
+		var carteHeight = (28/100) * windowHeight;
+		var carteWidth = (3/2) * carteHeight;
+		
+		$('.carteMC').css({
+			'height': carteHeight + 'px',
+			'width': carteWidth +'px'
+		});
+		
 	}
 	
 	function initiateCompteBtn()

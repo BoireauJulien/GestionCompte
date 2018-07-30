@@ -4,6 +4,8 @@ $(document).ready(function(){
 	var opForms = document.getElementsByClassName('opForm');
 	var opDebitFields = document.getElementsByClassName('opDebitField');
 	var opCreditFields = document.getElementsByClassName('opCreditField');
+	var debitInputs = $('.inputDebit');
+	var creditInputs = $('.inputCredit');
 	var indexFormActive = -1;
 	var indexFieldActive = 0;
 	var opLength = opCards.length;
@@ -22,12 +24,46 @@ $(document).ready(function(){
 		$(opBtns[i]).on('click', showFormActive(i));
 	}
 	
+	$(document).keyup(function(e){
+		if(e.keyCode == 27){
+			e.preventDefault();
+			e.returnValue= false;
+			if(indexFormActive == 0){
+				showFieldActive('back', opDebitFields, debitInputs);
+			} else if(indexFormActive == 1){
+				showFieldActive('back', opCreditFields, creditInputs);
+			} else {
+				return;
+			}
+			
+		}
+		if(e.keyCode == 9){
+			e.preventDefault();
+			e.returnValue= false;
+			if(indexFormActive == 0){
+				showFieldActive('next', opDebitFields, debitInputs);
+			} else if(indexFormActive == 1){
+				showFieldActive('next', opCreditFields, creditInputs);
+				
+			} else {
+				return;
+			}
+		}
+	});
+	$(document).keydown(function(e){
+		if(e.keyCode == 9){
+			e.preventDefault();
+			e.returnValue= false;
+		}
+	});
+	
 	$('.opDebitForm .opNav .btnBack').on('click', function(){
 		showFieldActive("back", opDebitFields);
 	});
 	
 	$('.opDebitForm .opNav .btnNext').on('click', function(){
 		showFieldActive("next", opDebitFields);
+		
 	});
 	
 	$('.opCreditForm .opNav .btnBack').on('click', function(){
@@ -75,13 +111,14 @@ $(document).ready(function(){
 		$('.btnBack').hide();
 	}
 	
-	function showFieldActive(direction, opFields)
+	function showFieldActive(direction, opFields, inputField)
 	{
 		if(direction == "next"){
 			if(indexFieldActive < opFieldLength - 1){
 				$(opFields[indexFieldActive]).animate({
 					'left': '-101%'
 				}, 400);
+				
 				indexFieldActive += 1;
 				$(opFields[indexFieldActive]).animate({
 					'left': '0%'
@@ -148,9 +185,6 @@ $(document).ready(function(){
 				});
 				indexFormActive = index;
 			}
-			
-			
-			
 		}
 	}
 });

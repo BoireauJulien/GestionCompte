@@ -5,10 +5,18 @@ $(document).ready(function(){
 	var cartes = document.getElementsByClassName('carteFill');
 	var years = document.getElementsByClassName('year');
 	var isAnimated = false;
+	var windowHeight = $(window).height();
 	
+	initiateCarteStyle();
 	initiateCompteBtn();
 	initiateCarteForCurrentYear();
 	setWidthPercent();
+	
+	window.onresize = function(){
+		windowHeight = $(window).height();
+		
+		initiateCarteStyle();
+	}
 	
 	$('.lessBtn').on('click', function(){
 		currentYear--;
@@ -25,6 +33,18 @@ $(document).ready(function(){
 	for(var i = 0; i < compteBtns.length; i++){
 		setCompteBtnWidth(i);
 		$(compteBtns[i]).on('click', clickCompteBtn(i));
+	}
+	
+	function initiateCarteStyle()
+	{
+		var carteHeight = (28/100) * windowHeight;
+		var carteWidth = (3/2) * carteHeight;
+		
+		$('.carteMCY').css({
+			'height': carteHeight + 'px',
+			'width': carteWidth +'px'
+		});
+		
 	}
 	
 	function initiateCarteForCurrentYear(){

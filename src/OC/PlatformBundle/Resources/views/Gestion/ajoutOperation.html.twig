@@ -41,35 +41,35 @@
 				
 				{{ form_errors(formDebit.compte) }}
 				
-				{{ form_widget(formDebit.compte, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+				{{ form_widget(formDebit.compte, {'attr': {'class': 'entityOpField inputStyle inputDebit'}}) }}
 			</div>
 			<div class="opDebitField opField">
 				{{ form_label(formDebit.dateOp, "Date de l'opération", {'label_attr': {'class' : 'opLabel'}}) }}
 				
 				{{ form_errors(formDebit.dateOp) }}
 				
-				{{ form_widget(formDebit.dateOp, {'attr': {'class' : 'dateOpField inputStyle'}}) }}
+				{{ form_widget(formDebit.dateOp, {'attr': {'class' : 'dateOpField inputStyle inputDebit'}}) }}
 			</div>
 			<div class="opDebitField opField">
 				{{ form_label(formDebit.category, "Category de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
 				
 				{{ form_errors(formDebit.category) }}
 				
-				{{ form_widget(formDebit.category, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+				{{ form_widget(formDebit.category, {'attr': {'class': 'entityOpField inputStyle inputDebit'}}) }}
 			</div>
 			<div class="opDebitField opField">
 				{{ form_label(formDebit.detail, "Détail de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
 				
 				{{ form_errors(formDebit.detail) }}
 				
-				{{ form_widget(formDebit.detail, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+				{{ form_widget(formDebit.detail, {'attr': {'class': 'opSimpleField inputStyle inputDebit'}}) }}
 			</div>
 			<div class="opDebitField opField">
 				{{ form_label(formDebit.montant, "Montant de l'opération" ,{'label_attr': {'class' : 'opLabel'}}) }}
 				
 				{{ form_errors(formDebit.montant) }}
 				
-				{{ form_widget(formDebit.montant, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+				{{ form_widget(formDebit.montant, {'attr': {'class': 'opSimpleField inputStyle inputDebit'}}) }}
 			</div>
 			<div class="hiddenChoiceField">
 				{{ form_row(formDebit.isDebit) }}
@@ -97,35 +97,35 @@
 				
 				{{ form_errors(formCredit.compte) }}
 				
-				{{ form_widget(formCredit.compte, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+				{{ form_widget(formCredit.compte, {'attr': {'class': 'entityOpField inputStyle inputCredit'}}) }}
 			</div>
 			<div class="opCreditField opField">
 				{{ form_label(formCredit.dateOp, "Date de l'opération", {'label_attr': {'class' : 'opLabel'}}) }}
 				
 				{{ form_errors(formCredit.dateOp) }}
 				
-				{{ form_widget(formCredit.dateOp, {'attr': {'class' : 'dateOpField inputStyle'}}) }}
+				{{ form_widget(formCredit.dateOp, {'attr': {'class' : 'dateOpField inputStyle inputCredit'}}) }}
 			</div>
 			<div class="opCreditField opField">
 				{{ form_label(formCredit.category, "Category de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
 				
 				{{ form_errors(formCredit.category) }}
 				
-				{{ form_widget(formCredit.category, {'attr': {'class': 'entityOpField inputStyle'}}) }}
+				{{ form_widget(formCredit.category, {'attr': {'class': 'entityOpField inputStyle inputCredit'}}) }}
 			</div>
 			<div class="opCreditField opField">
 				{{ form_label(formCredit.detail, "Détail de l'opération", {'label_attr':{'class': 'opLabel'}}) }}
 				
 				{{ form_errors(formCredit.detail) }}
 				
-				{{ form_widget(formCredit.detail, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+				{{ form_widget(formCredit.detail, {'attr': {'class': 'opSimpleField inputStyle inputCredit'}}) }}
 			</div>
 			<div class="opCreditField opField">
 				{{ form_label(formCredit.montant, "Montant de l'opération" ,{'label_attr': {'class' : 'opLabel'}}) }}
 				
 				{{ form_errors(formCredit.montant) }}
 				
-				{{ form_widget(formCredit.montant, {'attr': {'class': 'opSimpleField inputStyle'}}) }}
+				{{ form_widget(formCredit.montant, {'attr': {'class': 'opSimpleField inputStyle inputCredit'}}) }}
 			</div>
 			<div class="hiddenChoiceField">
 				{{ form_row(formCredit.isDebit) }}

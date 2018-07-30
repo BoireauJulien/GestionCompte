@@ -70,13 +70,11 @@ $(document).ready(function(){
 	
 	function carteStyle()
 	{
-		var carteHeight = windowHeight * (2/5);
-		var carteWidth = carteHeight * (3/4);
-		var montantHeight = carteHeight * (1/2);
-		var leftMontant = (carteWidth - montantHeight) * (1/2);
-		var fontSizeMontant = montantHeight * (1/5);
-		var topMC = (montantHeight - fontSizeMontant - 8) * (1/2);
-		
+		var carteHeight = windowHeight * (2/7);
+		var carteWidth = carteHeight * (3/2);
+		var montantWidth = (8/10) * carteWidth;
+		var leftMontant = (carteWidth - montantWidth) * (1/2);
+		var fontSizeMontant = carteHeight * (1/7);
 		
 		$('.carteDC').css({
 			'height': carteHeight + 'px',
@@ -84,15 +82,12 @@ $(document).ready(function(){
 		});
 		
 		$('.montantMD').css({
-			'height': montantHeight +'px',
-			'width': montantHeight + 'px',
+			'width': montantWidth + 'px',
 			'left': leftMontant + 'px',
 			'font-size': fontSizeMontant + 'px'
 		});
 		
-		$('.montantCenter').css({
-			'top': topMC + 'px'
-		});
+		
 		
 	}
 	

@@ -73,7 +73,8 @@ class TypeMY
     {
         $isEqual = false;
         if($this->account == $typeMY->getAccount() &&
-            ($this->montantCredit == $typeMY->getMontantCredit() || $this->montantDebit == $typeMY->getMontantDebit()) &&
+            (number_format($this->montantCredit, 2) == number_format($typeMY->getMontantCredit(), 2) 
+                || number_format($this->montantDebit, 2) == number_format($typeMY->getMontantDebit(), 2)) &&
             $this->year == $typeMY->getYear()){
             $isEqual = true;
         }

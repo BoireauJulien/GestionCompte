@@ -98,7 +98,7 @@ class TypeMC
         $isEqual = false;
         if($this->categoryName == $typeMC->getCategoryName() &&
             $this->libelleAccount == $typeMC->getLibelleAccount() &&
-            $this->montant == $typeMC->getMontant() &&
+            number_format($this->montant, 2) == number_format($typeMC->getMontant(),2) &&
             $this->monthYear == $typeMC->getMonthYear()){
             $isEqual = true;
         }

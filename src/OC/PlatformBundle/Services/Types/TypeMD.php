@@ -52,7 +52,7 @@ class TypeMD
     public function isEqual(TypeMD $typeMD)
     {
         $isEqual = false;
-        if($this->montant == $typeMD->getMontant() && $this->date == $typeMD->getDate()){
+        if(number_format($this->montant, 2) == number_format($typeMD->getMontant(),2) && $this->date == $typeMD->getDate()){
             $isEqual = true;
         }
         

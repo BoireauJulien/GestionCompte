@@ -6,6 +6,7 @@
 
 {% block scriptAndStyle %}
 	<link rel="stylesheet" href="{{ asset('Style/resultatSelection.css') }}">
+	<script type="text/javascript" src="{{ asset('Script/resultatSelection.js') }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -27,9 +28,13 @@
 	</div>
 	<div class="containerLignesCompte">
 		{% for arrayLC in arraysLC %}
-			<div class="compteTitle">
+			<div class="compteTitle compte{{ loop.index }}">
 			    {{ comptes[loop.index - 1].accountName }}
+			    <div class="montantTotalS">
+			    	0.00
+			    </div>
 			</div>
+			<div class="containerS container{{ loop.index }}">
 			{% for ligneCompte in arrayLC %}
 				{% if loop.index is divisible by(2) %}
 				<div class="rowDataLC color1S">
@@ -44,9 +49,13 @@
 				    </div>
 					<div class="colSelect colMontantS">
 						{{ ligneCompte.montant }}
+						<div class="iconCoche" title="Ajouter ce montant">
+							<i class="material-icons">done</i>
+						</div>
 					</div>
 				</div>
 			{% endfor %}
+			</div>
 		{% endfor %}
 	</div>
 {% endblock %}

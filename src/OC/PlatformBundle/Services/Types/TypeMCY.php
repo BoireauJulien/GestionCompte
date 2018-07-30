@@ -91,7 +91,7 @@ class TypeMCY
         $isEqual = false;
         if($this->categoryName == $typeMCY->getCategoryName() &&
             $this->libelleAccount == $typeMCY->getLibelleAccount() &&
-            $this->montant == $typeMCY->getMontant() &&
+            number_format($this->montant,2) == number_format($typeMCY->getMontant(), 2) &&
             $this->year == $typeMCY->getYear()){
                 $isEqual = true;
         }
